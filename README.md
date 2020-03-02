@@ -2,9 +2,9 @@
 Uses a RabbitMQ message broker to simulate electrical power values.
 
 
-# Running the Simulator
+# Running the Simulator on Ubuntu
 
-Clone this repository, open a terminal and navigate to the PV-Simulator directory.
+Open a terminal, clone this repository and navigate to the PV-Simulator directory.
 
 Create a Python3 virtual environment and run:
 
