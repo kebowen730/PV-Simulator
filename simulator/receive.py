@@ -3,6 +3,8 @@ import random
 
 
 def main():
+    open('results.txt', 'w').close()
+
     connection = pika.BlockingConnection(
         pika.ConnectionParameters(host='localhost'))
     channel = connection.channel()
