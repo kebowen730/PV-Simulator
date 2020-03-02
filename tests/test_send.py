@@ -1,4 +1,4 @@
-from app.send import send_message, main
+from simulator.send import send_message, main
 from unittest.mock import Mock, patch, call
 import pika
 import random
@@ -18,7 +18,7 @@ def test_send_message():
 
 @freeze_time('2019-01-02 03:04:05')
 @patch('pika.BlockingConnection')
-@patch('app.send.send_message')
+@patch('simulator.send.send_message')
 def test_main(mock_send_message, mock_blocking_connection):
     mock_conn = Mock()
     mock_channel = Mock()
@@ -35,4 +35,3 @@ def test_main(mock_send_message, mock_blocking_connection):
     assert mock_send_message.call_args_list[1] == call(FakeDatetime(2019, 1, 2, 3, 4, 7), mock_channel)
     assert mock_send_message.call_args_list[86399] == call(FakeDatetime(2019, 1, 3, 3, 4, 5), mock_channel)
     mock_conn.close.assert_called_once_with()
-    
