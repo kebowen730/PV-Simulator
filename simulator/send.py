@@ -26,7 +26,5 @@ def send_message(time, channel):
     print('Sent  {}'.format(watts))
 
 
-
-
 if __name__ == '__main__':
     main()
